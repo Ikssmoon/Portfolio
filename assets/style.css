@@ -4,9 +4,54 @@
     margin: 0;
     box-sizing: border-box;
 }
+body{
+    overflow-x: hidden;
+}
+
+.fadefrom{
+    display: none;
+}
+
+.transition{
+    position: relative;
+}
+
+.transition .fadefrom{
+    animation: fadefrom 1s;
+}
+
+
+.transition .fade,
+.default .fade{
+    display: block !important;    
+    position: fixed;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 1);
+    z-index: 1000000000000;
+}
+
+@keyframes fadefrom {
+    0%   {height: 0}
+    80% {height: 100vh}
+  }
+
+
+.fadeto{
+    animation: fadeto 1s;
+
+}
+
+@keyframes fadeto {
+    0%   {height: 100vh}
+    80%  {height: 0}
+}
+
 
 a{
     text-decoration: none;
+}
+b{
+    font-weight: 600;
 }
 
 body{
@@ -28,7 +73,8 @@ body{
 }
 
 .display_1{
-    color: #000;   font-size: 52px;
+    color: #000;   
+    font-size: 60px;
     line-height: normal;
     font-weight: 300;
     text-transform: uppercase;
@@ -36,7 +82,7 @@ body{
 
 .display_2{
     color: #000;
-    font-size: 60px;
+    font-size: 56px;
     line-height: normal;
     font-weight: 300;
     text-transform: uppercase;
@@ -68,7 +114,7 @@ body{
     position: relative;
     background-color: #969593;
     padding: 142px 220px;
-    padding-bottom: 750px;
+    padding-bottom: 950px;
     overflow: hidden;
     border-radius: 24px;
 }
@@ -97,6 +143,9 @@ body{
     bottom: 0;
     left: 0;
     width: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 122%;
 }
 
 
@@ -217,8 +266,8 @@ body{
 
 .hover-reveal {
     position: fixed;
-    width: 300px;
-    height: 260px;
+    width: 450px;
+    height: 225px;
     top: 0;
     left: 0;
     pointer-events: none;
@@ -230,6 +279,7 @@ body{
     height: 100%;
     position: relative;
     border-radius: 24px;
+    backdrop-filter: blur(32px);
 }
 
 .hover-reveal__deco {
@@ -238,7 +288,7 @@ body{
     position: absolute;
     top: 10px;
     left: -10px;
-    background-color: rgba(24, 19, 20, 0.25);
+    background-color: rgba(24, 19, 20, 0.0);
     border-radius: 24px;
 }
 
